@@ -1,3 +1,4 @@
+@use '../../../node_modules/bootstrap/scss/bootstrap.scss';
 @use '../partials/_variables' as *;
 
 * {
@@ -5,3 +6,5 @@
     padding: 0;
     box-sizing: border-box;
 }
+/* #d58f39 arancione per background
+#212428 nero per background */

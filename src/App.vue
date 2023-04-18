@@ -1,4 +1,5 @@
 <script>
+import {state} from './state'
 import axios from 'axios'
 import AppHeader from "./components/AppHeader.vue"
 import AppMain from "./components/AppMain.vue"
@@ -6,25 +7,25 @@ import AppFooter from "./components/AppFooter.vue"
 export default {
   data() {
     return {
-      api_url: 'https://db.ygoprodeck.com/api/v7/cardinfo.php?num=60&offset=0',
-
+      state
     }
   },
   methods: {
-    callApi(url) {
-      axios
-        .get(url)
-        .then(response => {
-          console.log(response)
-        })
-        .catch(err => {
-          console.log(err);
-          console.error(err.message);
-        })
+    callApi(url){
+axios
+.get(url)
+.then(response =>{
+  console.log(response.data);
+  state.cards = response.data.data
+  state.meta = response.data.meta
+})
+.catch(error =>{
+  console.error(error.message)
+})
     }
   },
   mounted() {
-    this.callApi(this.api_url)
+    this.callApi(state.API_URL)
 
   },
   components: {
@@ -37,8 +38,21 @@ export default {
 
 <template>
   <!--   <AppHeader></AppHeader>
-          <AppMain></AppMain>
-          <AppFooter></AppFooter> -->
+            <AppMain></AppMain>
+            <AppFooter></AppFooter> -->
+            <header>
+              <div class="container">
+                <div class="row">
+                  <h1>Yi-gi-ho</h1>
+                </div>
+              </div>
+            </header>
+            <main>
+
+            </main>
+            <footer>
+
+            </footer>
 </template>
 
 <style lang="scss">

@@ -1,10 +1,14 @@
 @use '../../../node_modules/bootstrap/scss/bootstrap.scss';
 @use '../partials/_variables' as *;
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+body{
+    background-color:#d58f39;
 }
-/* #d58f39 arancione per background
+header{
+    background-color:white ;
+}
+.container{
+    width: 90%;
+}
+/*  arancione per background
 #212428 nero per background */
